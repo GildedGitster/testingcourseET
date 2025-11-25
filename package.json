@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --recursive --exit 'tests/**/*.js'",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha --recursive 'tests/**/*.js'"
+    "test": "mocha --recursive --exit tests/**/*.js",
+    "coverage": "nyc mocha --recursive tests/**/*.js"
   },
   "author": "",
   "license": "MIT",
@@ -253,6 +253,23 @@
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1",
     "yocto-queue": "^0.1.0"
+  },
+  "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "tests/**/*.js",
+      "src/.internal/**"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "all": true
   },
   "repository": {
     "type": "git",
