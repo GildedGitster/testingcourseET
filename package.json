@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha test/**/*.test.js",
-    "coverage": "c8 --include src/**/*.js --exclude src/.internal/** --reporter=text --reporter=lcov --reporter=html mocha test/**/*.test.js"
+    "coverage": "c8 --reporter=text --reporter=lcov --reporter=html mocha test/**/*.test.js"
   },
   "devDependencies": {
     "c8": "^10.1.3",
