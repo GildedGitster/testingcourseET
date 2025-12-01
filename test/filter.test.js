@@ -30,5 +30,14 @@ describe("filter()", () => {
         const users = null
         expect(filter(users, ({ active }) => active)).to.deep.equal([]);
     });
+    it("Should throw a TypeError when the predicate is not correct (null or something else)", () => {
+        const users = [
+              { 'user': 'barney', 'active': false },
+              { 'user': 'fred',   'active': false }
+            ]
+        expect(() => filter(users, null)).to.throw(TypeError);
+        expect(() => filter(users, "wrong")).to.throw(TypeError);
+
+    });
 });
 
