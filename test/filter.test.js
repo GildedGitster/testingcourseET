@@ -26,5 +26,9 @@ describe("filter()", () => {
         const list2 = ["yes", "it", "is", "here"]
         expect(filter(list2, word => (word==="here") ? true : false)).to.deep.equal(["here"]);
     });
+    it("Should return an empty list when the given list is null", () => {
+        const users = null
+        expect(filter(users, ({ active }) => active)).to.deep.equal([]);
+    });
 });
 
