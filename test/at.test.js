@@ -25,4 +25,8 @@ describe("at()", () => {
         const object = { 'a': [{ 'b': { 'c': 3 } }, 4, {'e' : "word"}] }
         expect(at(null, ['a[0].b.c', 'a[1]'])).to.deep.equal([undefined, undefined]);
     });
+    it("Should return an empty list when path is an empty list", () => {
+        const object = { 'a': [{ 'b': { 'c': 3 } }, 4, {'e' : "word"}] }
+        expect(at(object, [])).to.deep.equal([]);
+    });
 });
